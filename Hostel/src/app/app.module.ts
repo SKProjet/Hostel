@@ -10,6 +10,7 @@ import { CreateRoomComponent } from './dashboard/create-room/create-room.compone
 import { ListRoomComponent } from './dashboard/list-room/list-room.component';
 import { DetailRoomComponent } from './dashboard/detail-room/detail-room.component';
 import { UserCredentialsComponentComponent } from './user-credentials-component/user-credentials-component.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserCredentialsComponentComponent } from './user-credentials-component/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

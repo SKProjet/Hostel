@@ -1,1 +1,26 @@
-<p>list-room works!</p>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let list of listRoom">
+
+    <td>
+      {{ list.id }}
+    </td>
+    <td>
+      {{ list.name }}
+    </td>
+    <!--
+    <td>
+      <a [routerLink]="/">Detail</a>
+    </td>
+    -->
+  </tr>
+  </tbody>
+</table>

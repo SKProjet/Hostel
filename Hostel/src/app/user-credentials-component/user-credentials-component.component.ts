@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import { User, UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-credentials-component',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCredentialsComponentComponent implements OnInit {
 
-  constructor() { }
+  @Input() title: string;
+  @Input() submitLabel: string;
+
+  user: User = {
+    password: '',
+    email: ''
+  };
+
+  userForm(){
+
+  }
+
+  sendCredentials(){
+
+  }
+
+  constructor(private userService: UserService) {
+
+  }
+
 
   ngOnInit(): void {
   }
+
 
 }
