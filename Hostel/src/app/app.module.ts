@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { CreateRoomComponent } from './dashboard/create-room/create-room.component';
 import { ListRoomComponent } from './dashboard/list-room/list-room.component';
 import { DetailRoomComponent } from './dashboard/detail-room/detail-room.component';
+import { UserCredentialsComponentComponent } from './user-credentials-component/user-credentials-component.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DetailRoomComponent } from './dashboard/detail-room/detail-room.compone
     HomeComponent,
     CreateRoomComponent,
     ListRoomComponent,
-    DetailRoomComponent
+    DetailRoomComponent,
+    UserCredentialsComponentComponent
   ],
   imports: [
     BrowserModule,
