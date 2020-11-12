@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { User, UserService } from '../user.service';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-user-credentials-component',
@@ -7,30 +7,20 @@ import { User, UserService } from '../user.service';
   styleUrls: ['./user-credentials-component.component.sass']
 })
 export class UserCredentialsComponentComponent implements OnInit {
-
   @Input() title: string;
   @Input() submitLabel: string;
+  @Output() validationForm: EventEmitter<FormGroup> = new EventEmitter<FormGroup>();
+  formValid: FormGroup;
 
-  user: User = {
-    password: '',
-    email: ''
-  };
-
-  userForm(){
-
-  }
-
-  sendCredentials(){
-
-  }
-
-  constructor(private userService: UserService) {
-
-  }
-
-
+  constructor(private formBuild: FormBuilder) { }
   ngOnInit(): void {
+    const {email, required, minLength } = Validators;
+    this.formValid = this.formBuild.group({
+      email: ['', [email, required]],
+      password: ['', [minLength(8), required]]
+    });
   }
-
-
+  sendCredentials(): void{
+    this.validationForm.emit(this.formValid);
+  }
 }
